@@ -13,8 +13,12 @@
 	<div class="dokuwiki">
 		<?php html_msgarea(); ?>
 		<?php require_once('header.php'); ?>
+		
 		<div class="content main">
 			<div class="headerclear"></div>
+			<div class="sidebar">
+			    some test text
+			</div>
 			<?php tpl_content(); ?>
 			<div class="footerclear"></div>
 		</div>

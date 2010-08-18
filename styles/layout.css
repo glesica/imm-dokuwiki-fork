@@ -542,6 +542,14 @@ button.pickerbutton:hover {
 	font-style: italic;
 }
 
+/* SIDEBAR FORMATTING -------------------------------------------------------------- */
+
+.content .sidebar {
+    margin-left: 30px;
+    background-color: red;
+    float: left;
+}
+
 /* DETAIL FORMATTING --------------------------------------------------------------- */
 
 .content.detailmain {
