@@ -17,10 +17,10 @@
 		<div class="content main">
 			<div class="headerclear"></div>
 			<?php tpl_content(); ?>
-			<div class="sidebar">
-			    some test text
-			</div>
 			<div class="footerclear"></div>
+		</div>
+		<div class="sidebar">
+		    some test text
 		</div>
 		<?php require_once('footer.php'); ?>
 	</div>
