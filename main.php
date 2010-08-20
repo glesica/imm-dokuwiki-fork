@@ -9,6 +9,13 @@
 	<link rel="shortcut icon" href="<?php echo DOKU_TPL?>images/favicon.png" />
 </head>
 
+<?php
+    // buffer the contents
+    ob_start();
+    tpl_content(false);
+    $content = ob_get_clean();
+?>
+
 <body>
 	<div class="dokuwiki">
 		<?php html_msgarea(); ?>
@@ -16,11 +23,17 @@
 		
 		<div class="content main">
 			<div class="headerclear"></div>
-			<?php tpl_content(); ?>
+			<div>
+			    <div class="sidebar">
+	        	    <div class="chunk"><?php tpl_toc()?></div>
+	        	    <div class="chunk"><?php tpl_include_page('./sidebar');?></div>
+        		</div>
+        		<div style="margin-left: 230px;">
+    			    <?php echo $content; ?>
+			    </div>
+			</div>
+			
 			<div class="footerclear"></div>
-		</div>
-		<div class="sidebar">
-		    some test text
 		</div>
 		<?php require_once('footer.php'); ?>
 	</div>
