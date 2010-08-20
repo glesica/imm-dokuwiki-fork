@@ -40,7 +40,6 @@ legend,
 	font-weight: bold;
 }
 
-
 legend {
 	font-size: 1.25em;
 }
@@ -334,16 +333,24 @@ button.pickerbutton:hover {
 	border: 1px solid #666;
 	border-top: 1px solid #AAA;
 	border-left: 1px solid #AAA;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    -moz-border-top-left-radius: 5px;
+    -moz-border-top-right-radius: 5px;
 	color: #FFF;
 	font-weight: bolder;
-	padding: 0px 1em;
+	padding: 5px 1em;
 }
 
 #toc__inside {
 	background-color: #FBFBFB;
 	border: 1px solid #F0F0F0;
 	border-top: 1px solid: #DDD;
-	padding: 0px 5px 5px 5px;
+	border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    -moz-border-bottom-left-radius: 5px;
+    -moz-border-bottom-right-radius: 5px;
+	padding: 5px;
 }
 
 #toc__inside > ul {
@@ -545,9 +552,12 @@ button.pickerbutton:hover {
 /* SIDEBAR FORMATTING -------------------------------------------------------------- */
 
 .content .sidebar {
-    margin-left: 30px;
-    background-color: red;
+    width: 200px;
     float: left;
+}
+
+.sidebar .chunk {
+    margin-bottom: 15px;
 }
 
 /* DETAIL FORMATTING --------------------------------------------------------------- */
