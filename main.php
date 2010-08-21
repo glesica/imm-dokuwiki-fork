@@ -10,10 +10,17 @@
 </head>
 
 <?php
+    // bring in utility functions
+    require_once(dirname(__FILE__).'/helper_functions.php');
+
     // buffer the contents
     ob_start();
     tpl_content(false);
     $content = ob_get_clean();
+    
+    // grab menu and sidebar
+    $menu = locate_page(tpl_getConf('menuname'));
+    $sidebar = locate_page(tpl_getConf('sidebarname'));
 ?>
 
 <body>
@@ -25,8 +32,16 @@
 			<div class="headerclear"></div>
 			<div>
 			    <div class="sidebar">
-	        	    <div class="chunk"><?php tpl_toc()?></div>
-	        	    <div class="chunk"><?php tpl_include_page('./sidebar');?></div>
+
+			        <?php if (tpl_toc(true)) {?>
+			        <div class="chunk thetoc"><?php tpl_toc();?></div>
+			        <?php }?>
+
+                    <?php if ($menu) {?>
+			        <div class="chunk"><?php tpl_include_page($menu);?></div>
+                    <?php }?>
+
+                    <?php if ($sidebar) { tpl_include_page($sidebar); }?>
         		</div>
         		<div style="margin-left: 230px;">
     			    <?php echo $content; ?>
