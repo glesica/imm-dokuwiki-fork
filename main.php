@@ -13,41 +13,56 @@
     // bring in utility functions
     require_once(dirname(__FILE__).'/helper_functions.php');
 
-    // buffer the contents
-    ob_start();
-    tpl_content(false);
-    $content = ob_get_clean();
-    
     // grab menu and sidebar
-    $menu = locate_page(tpl_getConf('menuname'));
-    $sidebar = locate_page(tpl_getConf('sidebarname'));
+    $use_sidebar = tpl_getConf('usesidebar');
+    
+    $menu_page = '';
+    $sidebar_page = '';
+    if ($use_sidebar) {
+        // only need to set these if we're using a sidebar
+        $menu_page = locate_page(tpl_getConf('menuname'));
+        $sidebar_page = locate_page(tpl_getConf('sidebarname'));
+        // buffer the page contents, suppress TOC
+        ob_start();
+        tpl_content(false);
+        $page_content = ob_get_clean();
+    } else {
+        // buffer the page contents normally
+        ob_start();
+        tpl_content();
+        $page_content = ob_get_clean();
+    }
 ?>
 
 <body>
 	<div class="dokuwiki">
 		<?php html_msgarea(); ?>
 		<?php require_once('header.php'); ?>
-		
 		<div class="content main">
 			<div class="headerclear"></div>
-			<div>
+			    <?php if ($use_sidebar) {?>
 			    <div class="sidebar">
-
 			        <?php if (tpl_toc(true)) {?>
-			        <div class="chunk thetoc"><?php tpl_toc();?></div>
+			        <div class="chunk"><?php tpl_toc();?></div>
 			        <?php }?>
 
-                    <?php if ($menu) {?>
-			        <div class="chunk"><?php tpl_include_page($menu);?></div>
+                    <?php if ($menu_page) {?>
+			        <div class="chunk">
+			            <div class="menu__header">
+			                <div>Menu</div>
+			            </div>
+			            <div class="menu__inside">
+			                <?php tpl_include_page($menu_page);?>
+		                </div>
+			        </div>
                     <?php }?>
 
-                    <?php if ($sidebar) { tpl_include_page($sidebar); }?>
+                    <?php if ($sidebar_page) { tpl_include_page($sidebar); }?>
         		</div>
-        		<div style="margin-left: 230px;">
-    			    <?php echo $content; ?>
-			    </div>
-			</div>
-			
+        		<?php }?>
+        		<?php if($use_sidebar) {?><div style="margin-left: 230px;"><?php }?>
+    			    <?php echo $page_content; ?>
+			    <?php if($use_sidebar) {?></div><?php }?>
 			<div class="footerclear"></div>
 		</div>
 		<?php require_once('footer.php'); ?>
