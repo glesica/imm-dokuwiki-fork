@@ -5,6 +5,7 @@
  * @author: George Lesica <glesica@gmail.com>
  */
 
-$conf['menuname']                    = 'menu';                       // name of menu pages
-$conf['sidebarname']                 = 'sidebar';                    // name of sidebar pages
+$conf['usesidebar']                  = 1;
+$conf['menuname']                    = 'menu';
+$conf['sidebarname']                 = 'sidebar';
 ?>
