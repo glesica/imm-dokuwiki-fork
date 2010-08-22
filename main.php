@@ -57,7 +57,7 @@
 			        </div>
                     <?php }?>
 
-                    <?php if ($sidebar_page) { tpl_include_page($sidebar); }?>
+                    <?php if ($sidebar_page) { tpl_include_page($sidebar_page); }?>
         		</div>
         		<?php }?>
         		<?php if($use_sidebar) {?><div style="margin-left: 230px;"><?php }?>
