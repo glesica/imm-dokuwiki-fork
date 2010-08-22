@@ -549,17 +549,6 @@ button.pickerbutton:hover {
 	font-style: italic;
 }
 
-/* SIDEBAR FORMATTING -------------------------------------------------------------- */
-
-.content .sidebar {
-    width: 200px;
-    float: left;
-}
-
-.sidebar .chunk {
-    margin-bottom: 15px;
-}
-
 /* DETAIL FORMATTING --------------------------------------------------------------- */
 
 .content.detailmain {
@@ -735,3 +724,69 @@ button.pickerbutton:hover {
 #dw__register fieldset {
 	line-height: 2.5em;
 }
+
+/* SIDEBAR FORMATTING -------------------------------------------------------------- */
+
+.content .sidebar {
+    width: 200px;
+    margin-top: 0.8em;
+    float: left;
+}
+
+.sidebar .chunk {
+    margin-bottom: 0.8em;
+}
+
+.menu__header {
+	background-color: #888;
+	background: -webkit-gradient(linear, left top, left bottom, from(#999), to(#888));
+	background: -moz-linear-gradient(top, #999, #888);
+	text-shadow: #333 1px 1px 1px;
+	border: 1px solid #666;
+	border-top: 1px solid #AAA;
+	border-left: 1px solid #AAA;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    -moz-border-top-left-radius: 5px;
+    -moz-border-top-right-radius: 5px;
+	color: #FFF;
+	font-weight: bolder;
+	padding: 5px 1em;
+}
+
+.menu__inside {
+	background-color: #FBFBFB;
+	border: 1px solid #F0F0F0;
+	border-top: 1px solid: #DDD;
+	border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    -moz-border-bottom-left-radius: 5px;
+    -moz-border-bottom-right-radius: 5px;
+	padding: 5px;
+}
+
+.menu__inside > h2 {
+    font-size: 1.2em;
+    border-bottom: none;
+    margin-top: 0;
+}
+
+.menu__inside > ul {
+	margin-top: 0px;
+}
+
+.menu__inside ul a {
+
+}
+
+.content.main .menu__inside li.level1,
+.content.main .menu__inside li.level2,
+.content.main .menu__inside li.level3,
+.content.main .menu__inside li.level4,
+.content.main .menu__inside li.level5 {
+    background: none;
+    padding: 0;
+}
+
+
+
