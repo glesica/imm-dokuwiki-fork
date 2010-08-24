@@ -13,11 +13,13 @@
     // bring in utility functions
     require_once(dirname(__FILE__).'/helper_functions.php');
 
-    // grab menu and sidebar
+    // sidebar and footer settings
     $use_sidebar = tpl_getConf('usesidebar');
-    
+    $use_content_footer = tpl_getConf('usefooter');
+    // sidebar and content
     $menu_page = '';
     $sidebar_page = '';
+    $foot_page = '';
     if ($use_sidebar) {
         // only need to set these if we're using a sidebar
         $menu_page = locate_page(tpl_getConf('menuname'));
@@ -31,6 +33,10 @@
         ob_start();
         tpl_content();
         $page_content = ob_get_clean();
+    }
+    // footer
+    if ($use_content_footer) {
+        $footer_page = locate_page(tpl_getConf('footername'));
     }
 ?>
 
@@ -62,6 +68,11 @@
         		<?php }?>
         		<?php if($use_sidebar) {?><div style="margin-left: 230px;"><?php }?>
     			    <?php echo $page_content; ?>
+    			    <?php if ($footer_page) {?>
+    			    <div class="content__footer">
+    			        <?php tpl_include_page($footer_page); ?>
+			        </div>
+			        <?php }?>
 			    <?php if($use_sidebar) {?></div><?php }?>
 			<div class="footerclear"></div>
 		</div>

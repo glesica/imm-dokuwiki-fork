@@ -8,4 +8,6 @@
 $conf['usesidebar']                  = 1;
 $conf['menuname']                    = 'menu';
 $conf['sidebarname']                 = 'sidebar';
+$conf['usefooter']                   = 0;
+$conf['footername']                  = 'footer';
 ?>
