@@ -1,7 +1,22 @@
 imm-dokuwiki-fork
 
+ABOUT
+
 A fork of the imm Dokuwiki template by Ian McIntosh (http://ianmcintosh.org/wiki/template).
 
 This fork adds (or will add) the following (among other things):
     * A sidebar
     * Slightly more attractive interface elements (more like a blog than a wiki)
+    * The ability to add per-namespace footers to the content section
+    
+The general purpose is to make the theme more friendly to use as a general web site rather than as solely a traditional wiki. As such I expect I will continue making small modifications as time goes on.
+    
+USAGE
+
+Once the template is activated the following options will become available in the configuration area:
+
+    * Display a sidebar - whether or not the sidebar should be used. Defaults to yes.
+    * Pagename for sidebar menu - the name of the page that should be used as a menu. The template will check the current namespace for this page first then will work its way up the namespace hierarchy. Only one will be included.
+    * Pagename for sidebar content - the name of a page to use as additional sidebar content. This might be a Flickr bade, a Twitter feed, a list of links, something along those lines. Search rules are the same as for the menu.
+    * Display content footer - whether or not the content footer should be displayed. Defaults to no. This is a page that will be appended to the bottom of other pages. Could be used for social bookmarking links or for additional information about a project that would appear on all its pages.
+    * Pagename for footer content - the name of the page to use for the content footer. Same search rules apply here as for the other page names.
