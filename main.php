@@ -7,6 +7,7 @@
 	</title>
 	<?php tpl_metaheaders(); ?>
 	<link rel="shortcut icon" href="<?php echo DOKU_TPL?>images/favicon.png" />
+	<link href='http://fonts.googleapis.com/css?family=Cantarell:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
 </head>
 
 <?php
